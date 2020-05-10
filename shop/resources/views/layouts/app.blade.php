@@ -1,17 +1,31 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>ASMS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    
+   
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <!-- 1. Подключить CSS-файл Bootstrap 3 -->  
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- 2. Подключить CSS-файл библиотеки Bootstrap 3 DateTimePicker -->  
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+    
+    <!-- 3. Подключить библиотеку jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 4. Подключить библиотеку moment -->
+    <script src="js/moment-with-locales.min.js"></script>
+    <!-- 5. Подключить js-файл фреймворка Bootstrap 3 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 6. Подключить js-файл библиотеки Bootstrap 3 DateTimePicker -->
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -24,7 +38,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <a class="new_body" href="{{ route('index') }}"><img src="{{ asset('login.jpeg') }}" alt="" width="250px" height="60px"  class=""></a> 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -45,7 +59,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                   
                                 </li>
                             @endif
                         @else
